@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "updateU";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Actualizar Usuarios</h2>
+<h4>@ViewBag.message</h4>
+
+@using (Html.BeginForm("updateU", "ActualizarUser"))
+{
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nombre">
+    </div>
+    <div>
+        <label for="apeliido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Apellido">
+    </div>
+    <div>
+        <label for="telefono">Telefono:</label>
+        <input type="number" class="form-control" id="telefono" name="Telefono" placeholder="Telefono" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" name="Email" placeholder="Correo">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="Password" placeholder="Contraseña">
+    </div>
+    <button type="submit" class="btn btn-primary margenbtn">Actualizar</button>
+
+}

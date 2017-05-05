@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Layout</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/Content/Estilos.css" />
+</head>
+<body>
+                <!--<div id="panelNav" class="row margenrow">-->
+        <div class="row margenrow">
+            <ul class="nav nav-pills">
+                <li class="col-xs-3"><a href="~/Comentario/ListadoComentarios" class="colorletra">Comentarios</a></li>
+                <li class="col-xs-4"><a href="~/ActualizarUser/UpdateU" class="colorletra">Actualizar Perfil</a></li>
+                <li class="col-xs-4"><a href="~/Login/index"  class="colorletra">Cerrar sesion</a></li>
+            </ul>
+
+        </div>
+        @RenderBody()
+
+        @if (ViewBag.ShowFooter != false)
+        {
+            <footer class="Divfooter">
+                <p>
+                    Si necesitas ponerte en contacto con los creadores de
+                    esta página, o si quieres ofrecerte como voluntario
+                    para traducirla, puedes enviar un correo electrónico
+                    a info [] occupyflash.org - o mencionarnos en
+                    Twitter OccupyFlash
+                </p>
+
+
+            </footer>
+        }
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

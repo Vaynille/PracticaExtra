@@ -1,0 +1,99 @@
+﻿@model IEnumerable<AppCS1.Model.ComentarioModel>
+@*@model AppCS1.Model.ComentarioModel*@
+
+@{
+    ViewBag.Title = "ListadoComentarios";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Prueba pull</h2>
+
+<h3>Inicio de sesion: @ViewBag.Nombre</h3>
+<h4>@ViewBag.message</h4>
+
+<div>
+    <label>Busquedad de comentario</label>
+    <input name="BusComentario" id="BuscarComent" type="text"/>
+
+</div>
+
+@* Tabla de busqueda de comentarios *@
+<table id="results" class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@* Combobox *@
+<select id="opciones"></select>
+<input type="date" id="fecha"/>
+
+@* Tabla de todos los comentarios *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Comentario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdUsuario</td>
+                <td>@item.Comentario</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form action="~/Comentario/GuardarComentario" method="post">
+    <textarea name="Comentario"></textarea>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<div>
+    @Html.ActionLink("Editar Usuario", "updateU", "ActualizarUser")
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/crear.js"></script>
+}
+
+
+@*Experimento 1
+    <h4>@Model.Titulo</h4>
+<h5>Duracion: @Model.Duracion</h5>
+<h5>Publicacion: @Model.Publicacion</h5>
+<h5>Filmado en: @Model.Pais</h5>*@
+
+
+
+
+@*Antiguo
+    @model IEnumerable<AppCS1.Model.ComentarioModel>
+@{
+    ViewBag.Title = "ListadoComentarios";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}*@
+
+
+@*<div class="container">
+    <h1>@ViewBag.Nombre</h1>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-xs-12 alert alert-info">
+                @item.Comentario
+            </div>
+        }
+    </div>
+    <form>
+        <textarea></textarea>
+        <button>Enviar</button>
+    </form>
+
+</div>*@

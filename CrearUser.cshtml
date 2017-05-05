@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "CrearUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>
+  usuario registrado:   @ViewBag.message
+</h4>
+
+
+@using (Html.BeginForm("CrearUser","CrearUsuario"))
+{
+    <div>
+        <label>Email</label>
+        <input name="Email" id="Email" type="email" required />
+        <button type="button" id="verificar">Verificar</button>
+        
+    </div>
+    <div>
+        <label>Passwoord</label>
+        <input name="Password" type="password" required />
+       
+    </div>
+    <button disabled id="enviar" type="submit">Ingresar</button>
+}
+
+@section scripts{
+    <script src="~/Scripts/crear.js"></script>
+    }

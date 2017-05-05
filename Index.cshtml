@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutLogin.cshtml";
+}
+<h2>Iniciar Sesion</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12">
+            @if (!String.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-danger">@ViewBag.Message</div>
+            }
+            <form class="form-horizontal" method="post" action="/Login/Entrar">
+                <div class="input-group">
+                    <label for="user">Usuario</label>
+                    <input id="user" name="user" type="email" required/>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contrase&ntilde;a</label>
+                    <input id="password" name="password" type="password" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Crear Usuario", "CrearUser", "CrearUsuario");
+ </div>
+
